@@ -1,5 +1,5 @@
 {% set name = "crowdin-cli" %}
-{% set version = "4.1.2" %}
+{% set version = "4.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/crowdin/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 6de6f4aaf8ed84041be1148c2987b5473058b14bd8f29e12615acecf319ad243
+  sha256: b17e00ea9c8be5655e2d51a992d71747cd19e11fd4bea0b3429ff22d5f424020
 
 build:
   noarch: generic
