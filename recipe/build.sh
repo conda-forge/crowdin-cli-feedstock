@@ -14,12 +14,13 @@ sed -i "s/id 'java'/id 'java'\nid('com.github.jk1.dependency-license-report') ve
 # Download dependency licenses
 ./gradlew generateLicenseReport
 
-cp build/libs/${PKG_NAME}-${PKG_VERSION}.jar ${PREFIX}/libexec/${PKG_NAME}/${PKG_NAME}.jar
+cp build/libs/crowdin-cli-${PKG_VERSION}.jar ${PREFIX}/libexec/crowdin-cli/crowdin-cli.jar
 
-tee ${PREFIX}/bin/${PKG_NAME} << EOF
+tee ${PREFIX}/bin/crowdin-cli << EOF
 exec \${JAVA_HOME}/bin/java -jar \${CONDA_PREFIX}/libexec/crowdin-cli/crowdin-cli.jar \$@
 EOF
+chmod +x ${PREFIX}/bin/crowdin-cli
 
-tee ${PREFIX}/bin/${PKG_NAME}.cmd << EOF
+tee ${PREFIX}/bin/crowdin-cli.cmd << EOF
 call %JAVA_HOME%\bin\java -jar %CONDA_PREFIX%\libexec\crowdin-cli\crowdin-cli.jar %*
 EOF
