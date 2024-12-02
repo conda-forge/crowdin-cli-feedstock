@@ -1,17 +1,17 @@
-{% set name = "crowdin-cli" %}
-{% set version = "4.4.0" %}
+context:
+  version: 4.4.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: crowdin-cli
+  version: ${{ version }}
 
 source:
-  url: https://github.com/crowdin/{{ name }}/archive/{{ version }}.tar.gz
+  url: https://github.com/crowdin/crowdin-cli/archive/${{ version }}.tar.gz
   sha256: 2d35a62795d48c148e64a8967b5abb8bfbedad9c82eaa4fe3cef9af20bdabd57
 
 build:
-  noarch: generic
   number: 0
+  noarch: generic
 
 requirements:
   build:
@@ -20,18 +20,18 @@ requirements:
   run:
     - openjdk
 
-test:
-  commands:
-    - {{ name }} --help
+tests:
+  - script:
+      - crowdin-cli --help
 
 about:
-  home: https://github.com/crowdin/{{ name }}
   license: MIT
   license_file:
     - LICENSE
     - build/reports/dependency-license/
   summary: A command-line client for the Crowdin API
-  dev_url: https://github.com/crowdin/{{ name }}
+  homepage: https://github.com/crowdin/crowdin-cli
+  repository: https://github.com/crowdin/crowdin-cli
 
 extra:
   recipe-maintainers:
