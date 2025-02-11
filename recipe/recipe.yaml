@@ -1,5 +1,5 @@
 context:
-  version: "4.5.2"
+  version: "4.6.0"
 
 package:
   name: crowdin-cli
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/crowdin/crowdin-cli/archive/${{ version }}.tar.gz
-  sha256: 31f1f20439a391b78618ca95ea505334d094b54804a879c1a8613ec16bd704a4
+  sha256: c7eee67a7a328f26a0d4d6fc5c59ce23287e1ead420fb27f84af0b7930516648
 
 build:
   number: 0
